@@ -53,6 +53,9 @@ if (document.URL.substring(0, dsturl1.length) == dsturl1) {
 					first.append(checkbox);
 				}
 			}
+		} else {
+			// When need to click 'search' button
+			jQuery("input[value='조회하기']").click()
 		}
 
 		if (sessionStorage.getItem('macro') == "true") {
@@ -117,11 +120,11 @@ if (document.URL.substring(0, dsturl1.length) == dsturl1) {
 					sessionStorage.removeItem('psgInfoPerPrnb3');
 					sessionStorage.removeItem('locSeatAttCd1');
 					sessionStorage.removeItem('rqSeatAttCd1');
-					chrome.extension.sendMessage({type: 'playSound'}, function(data) { });
+					//chrome.extension.sendMessage({type: 'playSound'}, function(data) { });
 				} else {
 					setTimeout(function() { 
 					location.reload();
-					}, 10000);
+					}, 1000);
 				}
 			} else {
 				history.go(-1);
